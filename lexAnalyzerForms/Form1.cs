@@ -33,6 +33,7 @@ namespace lexAnalyzerForms
             parser.FillMagazine();
             //tbOutput.Text += parser.printMagasin();
             //parser.runGenerator();
+
             tbOutput.Text += parser.printGenerator();
         }
     }

@@ -126,6 +126,7 @@ namespace lexAnalyzerForms
             public void name()
             {
                 oPSTok.ops.Add(lex);
+                Console.WriteLine(lex);
             }
             public void empty()
             {
@@ -222,7 +223,7 @@ namespace lexAnalyzerForms
 
                 }
                 ///////    I    //////////
-                if (stateLex == StateLetter.I && type == LexemType.WHILE)
+                if (stateLex == StateLetter.I && type == LexemType.NAME)
                 {
                     for (int i = 0; i < 2; i++)
                     {
@@ -272,6 +273,8 @@ namespace lexAnalyzerForms
                     stateParser[1].state = StateLetter.H;
                     stateParser[2].state = StateLetter.V;
                     stateParser[3].state = StateLetter.U;
+                    fucts.RemoveAt(0);
+                    fucts.Insert(0, name);
                 }
 
                 if (stateLex == StateLetter.S && type == LexemType.DECIMAL)
@@ -284,6 +287,8 @@ namespace lexAnalyzerForms
                     stateParser[0].type = LexemType.DECIMAL;
                     stateParser[1].state = StateLetter.V;
                     stateParser[2].state = StateLetter.U;
+                    fucts.RemoveAt(0);
+                    fucts.Insert(0, name);
                 }
                 if (stateLex == StateLetter.S && type == LexemType.INTEGER)
                 {
@@ -295,6 +300,8 @@ namespace lexAnalyzerForms
                     stateParser[0].type = LexemType.INTEGER;
                     stateParser[1].state = StateLetter.V;
                     stateParser[2].state = StateLetter.U;
+                    fucts.RemoveAt(0);
+                    fucts.Insert(0, name);
                 }
                 if (stateLex == StateLetter.S && type == LexemType.LPAREN)
                 {
@@ -308,6 +315,7 @@ namespace lexAnalyzerForms
                     stateParser[2].type = LexemType.RPAREN;
                     stateParser[3].state = StateLetter.V;
                     stateParser[4].state = StateLetter.U;
+
                 }
 
                 ////  H /////////
@@ -322,6 +330,8 @@ namespace lexAnalyzerForms
                     stateParser[0].type = LexemType.LSQUARE;
                     stateParser[1].state = StateLetter.S;
                     stateParser[2].type = LexemType.RSQUARE;
+                    fucts.RemoveAt(1);
+                    fucts.Insert(1, name);
 
                 }
 
